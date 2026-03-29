@@ -13,16 +13,6 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="BOSS SORTEIOS">
     
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="BOSS SORTEIOS - Sorteios Premium">
-    <meta name="twitter:description" content="Sorteios com prêmios incríveis!">
-    <meta name="twitter:image" content="./banner-boss.jpg">
-    
-    <!-- Meta tags importantes -->
-    <meta name="description" content="BOSS SORTEIOS - Plataforma de sorteios premium com prêmios incríveis. Participe agora!">
-    <meta name="keywords" content="sorteio, prêmios, boss, sorteios online, chance de ganhar">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ====== RESET E CONFIGURAÇÕES GERAIS ====== */
@@ -33,14 +23,6 @@
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
-        html, body {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
         body {
             background: linear-gradient(135deg, #0f3460 0%, #16213e 50%, #0f3460 100%);
             min-height: 100vh;
@@ -48,35 +30,22 @@
             justify-content: center;
             align-items: flex-start;
             color: #333;
+            overflow-x: hidden;
         }
 
-        /* ====== CONTAINER PRINCIPAL ====== */
         .container {
             width: 100%;
             max-width: 1200px;
             background: white;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            position: relative;
             border-radius: 20px;
             overflow: hidden;
             margin: 20px;
         }
 
-        /* ====== BANNER SEÇÃO ====== */
         .banner-section {
-            padding: 0;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: #1a1a2e;
             border-bottom: 3px solid #ff6b00;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .banner-container {
-            width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
-            overflow: hidden;
-            position: relative;
             aspect-ratio: 16/9;
         }
 
@@ -87,45 +56,22 @@
             display: block;
         }
 
-        /* ====== CABEÇALHO PREMIUM ====== */
         .header {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: white;
             padding: 40px 20px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #ff6b00, #ffa500, #ff6b00);
-        }
-
-        .header-content {
-            max-width: 1100px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
         }
 
         .valor-destaque {
             background: linear-gradient(135deg, #ff6b00, #ffa500);
             color: white;
-            padding: 15px 40px;
+            padding: 10px 30px;
             border-radius: 50px;
             font-weight: 800;
-            font-size: 1.8rem;
             display: inline-block;
             margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.4);
-            border: none;
-            animation: pulse 2s ease-in-out infinite;
+            animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
@@ -133,1060 +79,180 @@
             50% { transform: scale(1.05); }
         }
 
-        .header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        .header h1 i {
-            color: #ffa500;
-            margin-right: 15px;
-        }
-
-        .header h2 {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            font-weight: 400;
-            opacity: 0.95;
-            color: #e0e0e0;
-        }
-
-        /* ====== INFORMAÇÕES DO PRÊMIO ====== */
-        .premio-info {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 15px;
-            margin-top: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .premio-info h3 {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            color: #ffa500;
-        }
-
-        .premio-detalhes {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 15px;
-        }
-
-        .premio-item {
-            background: rgba(255, 255, 255, 0.95);
-            color: #1a1a2e;
-            padding: 20px;
-            border-radius: 12px;
-            min-width: 200px;
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
-            border-left: 4px solid #ff6b00;
-        }
-
-        .premio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(255, 107, 0, 0.3);
-        }
-
-        .premio-item i {
-            color: #ff6b00;
-            font-size: 2rem;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        /* ====== CARDS DE INFORMAÇÃO ====== */
-        .info-section {
-            padding: 30px 20px;
-            background: #f8f9fa;
-            border-bottom: 2px solid #e0e0e0;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .info-card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            text-align: center;
-            border-left: 5px solid #ff6b00;
-            transition: all 0.3s ease;
-        }
-
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .info-card h4 {
-            color: #1a1a2e;
-            margin-bottom: 12px;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .info-card h4 i {
-            color: #ff6b00;
-            font-size: 1.5rem;
-        }
-
-        .info-card p {
-            font-size: 1rem;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* ====== BARRA DE PROGRESSO ====== */
-        .progress-container {
-            padding: 30px 20px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-        }
-
-        .progress-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            max-width: 1100px;
-            margin: 0 auto 20px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .progress-header h3 {
-            color: #1a1a2e;
-            font-size: 1.4rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .progress-header h3 i {
-            color: #ff6b00;
-        }
-
-        .progress-count {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: #ff6b00;
-            background: white;
-            padding: 10px 25px;
-            border-radius: 50px;
-            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.2);
-        }
-
-        .progress-bar {
-            height: 30px;
-            background: #e0e0e0;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-            max-width: 1100px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .progress-fill {
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: width 0.8s ease;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 15px;
-            color: white;
-            font-weight: bold;
-            font-size: 0.95rem;
-        }
-
-        .reserved-fill {
-            background: linear-gradient(90deg, #3498db, #2980b9);
-        }
-
-        .paid-fill {
-            background: linear-gradient(90deg, #ff6b00, #ff8c00);
-        }
-
-        .progress-text {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: white;
-            font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-            z-index: 1;
-        }
-
-        .progress-legend {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-            max-width: 1100px;
-            margin-left: auto;
-            margin-right: auto;
-            flex-wrap: wrap;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #333;
-            font-weight: 600;
-        }
-
-        .legend-color {
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
-        }
-
-        /* ====== NÚMEROS CONTAINER ====== */
-        .numbers-container {
-            padding: 30px 20px;
-            background: white;
-        }
-
-        .cart-info {
-            max-width: 1100px;
-            margin: 0 auto 25px;
-            background: linear-gradient(135deg, #ff6b00, #ffa500);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .cart-info-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .cart-count {
-            background: rgba(255, 255, 255, 0.3);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-weight: 800;
-            font-size: 1.1rem;
-        }
-
-        .cart-total {
-            font-weight: 800;
-            font-size: 1.3rem;
-        }
-
-        .clear-cart-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid white;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .clear-cart-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .numbers-input-container {
-            max-width: 1100px;
-            margin: 0 auto 25px;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .numbers-input-container input {
-            flex: 1;
-            min-width: 200px;
-            padding: 12px 15px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .numbers-input-container input:focus {
-            outline: none;
-            border-color: #ff6b00;
-            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
-        }
-
-        .numbers-input-container button {
-            background: linear-gradient(135deg, #ff6b00, #ffa500);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .numbers-input-container button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
-        }
-
-        .numbers-display {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            min-height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        /* ====== MODAL ====== */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: 20px;
-            max-width: 500px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            animation: slideUp 0.3s ease;
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .modal-header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 30px;
-            text-align: center;
-            border-radius: 20px 20px 0 0;
-            border-bottom: 3px solid #ff6b00;
-        }
-
-        .modal-header h3 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .modal-header p {
-            font-size: 1.3rem;
-            opacity: 0.95;
-        }
-
-        .payment-section {
-            padding: 30px;
-            text-align: center;
-        }
-
-        .payment-section h4 {
-            color: #1a1a2e;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        .payment-section p {
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .payment-link {
-            display: inline-block;
-            background: linear-gradient(135deg, #ff6b00, #ffa500);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
-            margin: 20px 0;
-        }
-
-        .payment-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.4);
-        }
-
-        /* ====== FORMULÁRIO ====== */
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #1a1a2e;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            font-family: inherit;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #ff6b00;
-            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
-        }
-
-        /* ====== BOTÕES MODAL ====== */
-        .modal-footer {
-            display: flex;
-            gap: 10px;
-            padding: 20px 30px;
-            background: #f8f9fa;
-            border-top: 1px solid #e0e0e0;
-            border-radius: 0 0 20px 20px;
-        }
-
-        .cancel-btn,
-        .confirm-btn {
-            flex: 1;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .cancel-btn {
-            background: #e0e0e0;
-            color: #333;
-        }
-
-        .cancel-btn:hover {
-            background: #d0d0d0;
-        }
-
-        .confirm-btn {
-            background: linear-gradient(135deg, #ff6b00, #ffa500);
-            color: white;
-        }
-
-        .confirm-btn:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.3);
-        }
-
-        .confirm-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        /* ====== RODAPÉ ====== */
-        .footer {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-            border-top: 3px solid #ff6b00;
-        }
-
-        .footer p {
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-        }
-
-        .contact-info {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-
-        .contact-info a {
-            color: #ffa500;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        .contact-info i {
-            margin-right: 8px;
-            color: #ffa500;
-        }
-
-        /* ====== LOADING ====== */
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #666;
-        }
-
-        .spinner {
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #ff6b00;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* ====== CONFETE ANIMAÇÃO ====== */
-        .confetti {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            background: #ff6b00;
-            pointer-events: none;
-            animation: confetti-fall 3s ease-in forwards;
-        }
-
-        @keyframes confetti-fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        /* ====== SCROLLBAR PERSONALIZADA ====== */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #ff6b00;
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #e55a00;
-        }
-
-        /* ====== RESPONSIVO ====== */
-        @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-                border-radius: 15px;
-            }
-
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .header h2 {
-                font-size: 1.1rem;
-            }
-
-            .valor-destaque {
-                font-size: 1.3rem;
-                padding: 12px 25px;
-            }
-
-            .modal-content {
-                max-width: 95%;
-            }
-
-            .progress-legend {
-                gap: 15px;
-            }
-
-            .cart-info {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.6rem;
-            }
-
-            .valor-destaque {
-                font-size: 1.1rem;
-                padding: 10px 20px;
-            }
-
-            .progress-header {
-                flex-direction: column;
-            }
-
-            .progress-count {
-                font-size: 1.3rem;
-            }
-        }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .header h2 { font-size: 1.2rem; opacity: 0.8; margin-bottom: 30px; }
+
+        .info-section { padding: 30px 20px; background: #f8f9fa; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .info-card { background: white; padding: 20px; border-radius: 12px; text-align: center; border-left: 5px solid #ff6b00; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+
+        .numbers-container { padding: 40px 20px; text-align: center; }
+        .numbers-input-container { margin: 20px 0; display: flex; justify-content: center; gap: 10px; }
+        .numbers-input-container input { padding: 15px; border-radius: 8px; border: 2px solid #ddd; width: 250px; font-size: 1rem; }
+        .numbers-input-container button { padding: 15px 30px; border-radius: 8px; border: none; background: #ff6b00; color: white; font-weight: bold; cursor: pointer; }
+
+        .numbers-display { background: #f0f0f0; padding: 20px; border-radius: 10px; margin-top: 20px; min-height: 60px; line-height: 1.6; }
+
+        .cart-info { background: #1a1a2e; color: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .cart-total { font-weight: 800; color: #ff6b00; font-size: 1.2rem; }
+
+        .footer { padding: 40px 20px; text-align: center; background: #1a1a2e; color: white; }
+
+        /* MODAL */
+        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; z-index: 1000; }
+        .modal-content { background: white; padding: 30px; border-radius: 20px; width: 90%; max-width: 500px; text-align: center; }
+        .form-group { text-align: left; margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ddd; }
+        .modal-footer { display: flex; gap: 10px; margin-top: 20px; }
+        .modal-footer button { flex: 1; padding: 15px; border-radius: 8px; border: none; cursor: pointer; font-weight: bold; }
+        .confirm-btn { background: #28a745; color: white; }
+        .cancel-btn { background: #dc3545; color: white; }
+
+        .confetti { position: fixed; width: 10px; height: 10px; pointer-events: none; z-index: 9999; animation: fall 3s linear forwards; }
+        @keyframes fall { to { transform: translateY(100vh) rotate(360deg); } }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- BANNER PRINCIPAL -->
         <div class="banner-section">
-            <div class="banner-container">
-                <img src="./banner-boss.jpg" alt="BOSS SORTEIOS" class="banner-img" loading="lazy">
-            </div>
+            <img src="./banner-boss.jpg" alt="BOSS SORTEIOS" class="banner-img">
         </div>
 
-        <!-- CABEÇALHO -->
         <div class="header">
             <div class="valor-destaque">Sorteios Premium</div>
-            
-            <div class="header-content">
-                <h1><i class="fas fa-crown"></i> BOSS SORTEIOS</h1>
-                <h2>Escolha seus números e concorra a prêmios incríveis!</h2>
-                
-                <div class="premio-info">
-                    <h3><i class="fas fa-gift"></i> COMO FUNCIONA</h3>
-                    <div class="premio-detalhes">
-                        <div class="premio-item">
-                            <i class="fas fa-hashtag"></i>
-                            <div><strong>10.000 NÚMEROS</strong></div>
-                            <div>Escolha seus números de sorte</div>
-                        </div>
-                        <div class="premio-item">
-                            <i class="fas fa-money-bill-wave"></i>
-                            <div><strong>PRÊMIOS INCRÍVEIS</strong></div>
-                            <div>Ganhe prêmios surpreendentes</div>
-                        </div>
-                        <div class="premio-item">
-                            <i class="fas fa-bolt"></i>
-                            <div><strong>PAGAMENTO RÁPIDO</strong></div>
-                            <div>Receba seus prêmios rapidamente</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h1>BOSS SORTEIOS</h1>
+            <h2>Escolha seus números e concorra a prêmios incríveis!</h2>
         </div>
 
-        <!-- CARDS DE INFORMAÇÃO -->
         <div class="info-section">
             <div class="info-grid">
                 <div class="info-card">
-                    <h4><i class="fas fa-shield-alt"></i> SORTEIO SEGURO</h4>
-                    <p>Sorteios realizados com transparência e segurança</p>
+                    <h4><i class="fas fa-shield-alt"></i> SEGURO</h4>
+                    <p>Sorteios transparentes</p>
                 </div>
                 <div class="info-card">
-                    <h4><i class="fas fa-lock"></i> PAGAMENTO SEGURO</h4>
-                    <p>Integrado com Asaas para máxima segurança</p>
+                    <h4><i class="fas fa-bolt"></i> RÁPIDO</h4>
+                    <p>Checkout via Kiwify</p>
                 </div>
                 <div class="info-card">
                     <h4><i class="fas fa-envelope"></i> SUPORTE</h4>
-                    <p>Entre em contato: BOSSSORTEIOS@GMAIL.COM</p>
+                    <p>BOSSSORTEIOS@GMAIL.COM</p>
                 </div>
             </div>
         </div>
 
-        <!-- BARRA DE PROGRESSO -->
-        <div class="progress-container">
-            <div class="progress-header">
-                <h3><i class="fas fa-chart-line"></i> PROGRESSO</h3>
-                <div class="progress-count" id="progressCount">
-                    <span id="pagosCount">0</span>/<span id="reservadosCount">0</span>/10000
-                </div>
-            </div>
-            <div class="progress-bar">
-                <div class="progress-fill reserved-fill" id="reservadosFill"></div>
-                <div class="progress-fill paid-fill" id="pagosFill"></div>
-                <div class="progress-text" id="progressText">0%</div>
-            </div>
-            <div class="progress-legend">
-                <div class="legend-item">
-                    <span class="legend-color" style="background: #3498db;"></span>
-                    <span>Reservados: <span id="legendReservados">0</span></span>
-                </div>
-                <div class="legend-item">
-                    <span class="legend-color" style="background: #ff6b00;"></span>
-                    <span>Pagos: <span id="legendPagos">0</span></span>
-                </div>
-                <div class="legend-item">
-                    <span class="legend-color" style="background: #e0e0e0;"></span>
-                    <span>Disponíveis: <span id="legendDisponiveis">10000</span></span>
-                </div>
-            </div>
-        </div>
-
-        <!-- SELEÇÃO DE NÚMEROS -->
         <div class="numbers-container">
             <div class="cart-info" id="cartInfo" style="display: none;">
-                <div class="cart-info-left">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>Números selecionados:</span>
-                    <span class="cart-count" id="cartCount">0</span>
-                    <span class="cart-total">Total: R$ <span id="cartTotal">0,00</span></span>
+                <div>
+                    <i class="fas fa-shopping-cart"></i> 
+                    <span id="cartCount">0</span> números | 
+                    <span class="cart-total">R$ <span id="cartTotal">0,00</span></span>
                 </div>
-                <button class="clear-cart-btn" onclick="limparCarrinho()">
-                    <i class="fas fa-trash"></i> Limpar
-                </button>
+                <button onclick="limparCarrinho()" style="background:none; border:1px solid white; color:white; padding:5px 10px; border-radius:5px; cursor:pointer;">Limpar</button>
             </div>
 
             <div class="numbers-input-container">
-                <input type="number" id="numberInput" placeholder="Digite um número de 1 a 10000" min="1" max="10000">
-                <button onclick="adicionarNumero()"><i class="fas fa-plus"></i> Adicionar</button>
+                <input type="number" id="numberInput" placeholder="Digite um número (1-10000)">
+                <button onclick="adicionarNumero()">Adicionar</button>
             </div>
 
             <div class="numbers-display" id="numbersDisplay">
-                Nenhum número selecionado ainda. Digite um número acima para começar!
+                Nenhum número selecionado ainda.
             </div>
+
+            <button onclick="abrirModal()" id="checkoutBtn" style="margin-top:20px; padding:20px 40px; background:#28a745; color:white; border:none; border-radius:10px; font-size:1.2rem; font-weight:bold; cursor:pointer; display:none;">
+                <i class="fas fa-check-circle"></i> FINALIZAR COMPRA
+            </button>
         </div>
 
-        <!-- RODAPÉ -->
         <div class="footer">
-            <p><strong>Dúvidas ou sugestões?</strong></p>
-            <div class="contact-info">
-                <i class="fas fa-envelope"></i>
-                Entre em contato: 
-                <a href="mailto:BOSSSORTEIOS@GMAIL.COM">BOSSSORTEIOS@GMAIL.COM</a>
-            </div>
-            <p style="margin-top: 20px; font-size: 0.95rem; opacity: 0.9;">
-                <i class="fas fa-star"></i> BOSS SORTEIOS - Sorteios Premium com Prêmios Incríveis!
-            </p>
+            <p>&copy; 2024 BOSS SORTEIOS - Todos os direitos reservados</p>
         </div>
     </div>
 
-    <!-- MODAL DE PAGAMENTO -->
     <div class="modal" id="paymentModal">
         <div class="modal-content">
-            <div class="modal-header">
-                <h3>Finalizar Compra</h3>
-                <p>Valor Total: <strong>R$ <span id="modalTotal">0,00</span></strong></p>
+            <h3 style="margin-bottom:20px;">Dados do Comprador</h3>
+            <p style="margin-bottom:20px; color:#666;">Você será redirecionado para o checkout seguro da Kiwify.</p>
+            
+            <div class="form-group">
+                <label>Nome Completo</label>
+                <input type="text" id="clientName" placeholder="Seu nome">
             </div>
-
-            <div class="payment-section" id="pixSection" style="display: none;">
-                <h4><i class="fas fa-qrcode"></i> PAGAMENTO VIA PIX</h4>
-                <p>Escaneie o QR Code abaixo ou use o Copia e Cola</p>
-                
-                <div id="qrcodeContainer" style="margin: 20px auto; max-width: 200px; background: white; padding: 10px; border-radius: 10px;">
-                    <img id="qrcodeImg" src="" alt="QR Code PIX" style="width: 100%; height: auto; display: block;">
-                </div>
-
-                <div class="copy-paste-container" style="margin-top: 15px;">
-                    <textarea id="pixPayload" readonly style="width: 100%; height: 60px; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.8rem; background: #f9f9f9; resize: none; margin-bottom: 10px;"></textarea>
-                    <button onclick="copiarPix()" class="payment-link" style="background: #28a745; border: none; cursor: pointer; width: 100%;">
-                        <i class="fas fa-copy"></i> Copiar Código PIX
-                    </button>
-                </div>
-            </div>
-
-            <div class="payment-section" id="initialPaymentSection">
-                <h4><i class="fas fa-credit-card"></i> PAGAMENTO SEGURO</h4>
-                <p>Preencha seus dados abaixo para gerar o PIX de pagamento</p>
-                <p style="color: #666; margin-top: 10px; font-size: 0.85rem;">
-                    <i class="fas fa-shield-alt"></i> Seus dados estão protegidos.
-                </p>
-            </div>
-
-            <div style="padding: 0 30px;">
-                <div class="form-group">
-                    <label for="clientName"><i class="fas fa-user"></i> SEU NOME COMPLETO *</label>
-                    <input type="text" id="clientName" placeholder="Digite seu nome completo" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="clientEmail"><i class="fas fa-envelope"></i> SEU E-MAIL *</label>
-                    <input type="email" id="clientEmail" placeholder="seu@email.com" required>
-                </div>
+            <div class="form-group">
+                <label>E-mail</label>
+                <input type="email" id="clientEmail" placeholder="seu@email.com">
             </div>
 
             <div class="modal-footer">
-                <button class="cancel-btn" onclick="fecharModal()">
-                    <i class="fas fa-times"></i> Cancelar
-                </button>
-                <button class="confirm-btn" id="confirmBtn" onclick="confirmarReserva()">
-                    <i class="fas fa-check"></i> Confirmar
-                </button>
+                <button class="cancel-btn" onclick="fecharModal()">Cancelar</button>
+                <button class="confirm-btn" onclick="irParaCheckout()">Ir para Pagamento</button>
             </div>
         </div>
     </div>
 
-    <!-- SCRIPT PRINCIPAL -->
     <script>
-        /* ================= CONFIGURAÇÃO ================= */
-        const BOSS_CONFIG = {
-            valorNumerico: 5.00,
-            asaasLink: "$aact_prod_000MzkwODA2MWY2OGM3MWRlMDU2NWM3MzJlNzZmNGZhZGY6OmQ3YTRiZDliLTg5OTctNDE2Yy1iZmMxLWQ5MTNiYTU2ZjAwOTo6JGFhY2hfYTgzMjU0YjQtZmI1Ny00NTVjLWIzZTAtNzQzNDVkZDUzZGU3",
-            email: "BOSSSORTEIOS@GMAIL.COM",
-            totalNumeros: 10000
+        const CONFIG = {
+            valor: 5.00,
+            kiwifyLink: "https://pay.kiwify.com.br/j2BxrFD"
         };
 
-        /* ================= ESTADO ================= */
-        const state = {
-            pagos: new Set(),
-            reservados: new Set(),
-            carrinho: new Set()
-        };
+        const state = { carrinho: new Set() };
 
-        /* ================= DOM ================= */
-        const modal = document.getElementById("paymentModal");
-        const numberInput = document.getElementById("numberInput");
-        const numbersDisplay = document.getElementById("numbersDisplay");
-        const cartInfo = document.getElementById("cartInfo");
-        const nameInput = document.getElementById("clientName");
-        const emailInput = document.getElementById("clientEmail");
-        const paymentLink = document.getElementById("paymentLink");
-        const modalTotal = document.getElementById("modalTotal");
-
-        /* ================= NÚMEROS ALEATÓRIOS ================= */
         function adicionarNumero() {
-            const num = parseInt(numberInput.value);
+            const input = document.getElementById("numberInput");
+            const num = parseInt(input.value);
+            if(!num || num < 1 || num > 10000) return alert("Número inválido!");
+            if(state.carrinho.has(num)) return alert("Já está no carrinho!");
             
-            if(isNaN(num) || num < 1 || num > BOSS_CONFIG.totalNumeros) {
-                alert(`Digite um número entre 1 e ${BOSS_CONFIG.totalNumeros}`);
-                return;
-            }
-
-            if(state.pagos.has(num) || state.reservados.has(num)) {
-                alert("Este número já foi vendido!");
-                return;
-            }
-
-            if(state.carrinho.has(num)) {
-                alert("Este número já está no carrinho!");
-                return;
-            }
-
             state.carrinho.add(num);
-            numberInput.value = "";
-            numberInput.focus();
-            atualizarCarrinho();
+            input.value = "";
+            atualizarInterface();
             criarConfete();
         }
 
-        function atualizarCarrinho() {
+        function atualizarInterface() {
             const count = state.carrinho.size;
-            const total = count * BOSS_CONFIG.valorNumerico;
-
-            if(count > 0) {
-                cartInfo.style.display = "flex";
-                document.getElementById("cartCount").textContent = count;
-                document.getElementById("cartTotal").textContent = total.toFixed(2).replace(".", ",");
-                
-                const numeros = Array.from(state.carrinho).sort((a,b) => a-b).join(", ");
-                numbersDisplay.textContent = `Números selecionados: ${numeros}`;
-            } else {
-                cartInfo.style.display = "none";
-                numbersDisplay.textContent = "Nenhum número selecionado ainda. Digite um número acima para começar!";
-            }
+            const total = count * CONFIG.valor;
+            
+            document.getElementById("cartInfo").style.display = count > 0 ? "flex" : "none";
+            document.getElementById("checkoutBtn").style.display = count > 0 ? "inline-block" : "none";
+            document.getElementById("cartCount").textContent = count;
+            document.getElementById("cartTotal").textContent = total.toFixed(2).replace(".", ",");
+            
+            const lista = Array.from(state.carrinho).sort((a,b) => a-b).join(", ");
+            document.getElementById("numbersDisplay").textContent = count > 0 ? `Números: ${lista}` : "Nenhum número selecionado.";
         }
 
         function limparCarrinho() {
             state.carrinho.clear();
-            atualizarCarrinho();
+            atualizarInterface();
         }
 
-        function abrirModal() {
-            if(state.carrinho.size === 0) {
-                alert("Selecione pelo menos um número");
-                return;
-            }
+        function abrirModal() { document.getElementById("paymentModal").style.display = "flex"; }
+        function fecharModal() { document.getElementById("paymentModal").style.display = "none"; }
 
-            const total = state.carrinho.size * BOSS_CONFIG.valorNumerico;
-            modalTotal.textContent = total.toFixed(2).replace(".", ",");
-            
-            paymentLink.href = BOSS_CONFIG.asaasLink;
-            modal.style.display = "flex";
+        function irParaCheckout() {
+            const nome = document.getElementById("clientName").value;
+            const email = document.getElementById("clientEmail").value;
+            if(!nome || !email) return alert("Preencha os dados!");
+
+            // Redireciona para Kiwify
+            window.location.href = CONFIG.kiwifyLink;
         }
 
-        /* ================= CONFETE ================= */
         function criarConfete() {
-            for(let i = 0; i < 30; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.backgroundColor = ['#ff6b00', '#ffa500', '#3498db', '#2ecc71'][Math.floor(Math.random() * 4)];
-                confetti.style.animationDelay = Math.random() * 0.5 + 's';
-                document.body.appendChild(confetti);
-                
-                setTimeout(() => confetti.remove(), 3000);
+            for(let i=0; i<20; i++) {
+                const c = document.createElement("div");
+                c.className = "confetti";
+                c.style.left = Math.random() * 100 + "vw";
+                c.style.backgroundColor = ["#ff6b00", "#ffa500", "#28a745"][Math.floor(Math.random()*3)];
+                c.style.animationDelay = Math.random() * 0.5 + "s";
+                document.body.appendChild(c);
+                setTimeout(() => c.remove(), 3000);
             }
         }
-
-        /* ================= RESERVAR ================= */
-        async function confirmarReserva() {
-            const btn = document.getElementById("confirmBtn");
-            const nome = nameInput.value.trim();
-            const email = emailInput.value.trim();
-
-            if (!nome || !email) {
-                alert("Preencha todos os campos para continuar");
-                return;
-            }
-
-            btn.disabled = true;
-            btn.innerHTML = "⏳ Gerando PIX...";
-
-            try {
-                const total = (state.carrinho.size * BOSS_CONFIG.valorNumerico).toFixed(2);
-                const numeros = Array.from(state.carrinho).sort((a,b) => a-b).join(", ");
-                
-                const response = await fetch('/.netlify/functions/create-pix', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ nome, email, total, numeros })
-                });
-
-                const data = await response.json();
-
-                if (data.success) {
-                    // Esconder formulário e mostrar PIX
-                    document.getElementById("initialPaymentSection").style.display = "none";
-                    document.querySelector(".form-group").parentNode.style.display = "none";
-                    document.getElementById("pixSection").style.display = "block";
-                    
-                    // Preencher dados do PIX
-                    document.getElementById("qrcodeImg").src = `data:image/png;base64,${data.qrCodeBase64}`;
-                    document.getElementById("pixPayload").value = data.copyAndPaste;
-                    
-                    btn.innerHTML = "✅ PIX Gerado!";
-                    btn.style.background = "#28a745";
-                    
-                    // Mudar comportamento do botão para fechar
-                    btn.onclick = () => {
-                        fecharModal();
-                        limparCarrinho();
-                        location.reload(); // Recarregar para resetar estado
-                    };
-                    btn.innerHTML = "Concluir";
-                    btn.disabled = false;
-                } else {
-                    throw new Error(data.error || "Erro ao gerar PIX");
-                }
-
-            } catch (e) {
-                console.error(e);
-                alert("Erro ao processar pagamento. Verifique se as chaves da API estão configuradas corretamente no Netlify.");
-                btn.innerHTML = "Tentar Novamente";
-                btn.disabled = false;
-            }
-        }
-
-        function copiarPix() {
-            const payload = document.getElementById("pixPayload");
-            payload.select();
-            document.execCommand("copy");
-            alert("Código PIX copiado para a área de transferência!");
-        }
-
-        /* ================= INIT ================= */
-        document.addEventListener("DOMContentLoaded", () => {
-            numberInput.addEventListener("keypress", (e) => {
-                if(e.key === "Enter") adicionarNumero();
-            });
-
-            // Botão flutuante de compra
-            const floatingBtn = document.createElement('button');
-            floatingBtn.innerHTML = '<i class="fas fa-shopping-cart"></i> Comprar';
-            floatingBtn.style.cssText = `
-                position: fixed;
-                bottom: 30px;
-                right: 30px;
-                background: linear-gradient(135deg, #ff6b00, #ffa500);
-                color: white;
-                border: none;
-                padding: 15px 25px;
-                border-radius: 50px;
-                cursor: pointer;
-                font-weight: 600;
-                font-size: 1rem;
-                z-index: 999;
-                box-shadow: 0 8px 20px rgba(255, 107, 0, 0.3);
-                transition: all 0.3s ease;
-                display: none;
-            `;
-            floatingBtn.onclick = abrirModal;
-            document.body.appendChild(floatingBtn);
-
-            setInterval(() => {
-                if(state.carrinho.size > 0) {
-                    floatingBtn.style.display = 'block';
-                } else {
-                    floatingBtn.style.display = 'none';
-                }
-            }, 500);
-        });
-
-        window.adicionarNumero = adicionarNumero;
-        window.limparCarrinho = limparCarrinho;
-        window.abrirModal = abrirModal;
-        window.confirmarReserva = confirmarReserva;
-        window.fecharModal = () => modal.style.display = "none";
     </script>
 </body>
 </html>
