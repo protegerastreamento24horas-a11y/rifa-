@@ -929,16 +929,27 @@
                 <p>Valor Total: <strong>R$ <span id="modalTotal">0,00</span></strong></p>
             </div>
 
-            <div class="payment-section">
-                <h4><i class="fas fa-credit-card"></i> PAGAMENTO SEGURO</h4>
-                <p>Clique no botão abaixo para realizar o pagamento via Asaas</p>
+            <div class="payment-section" id="pixSection" style="display: none;">
+                <h4><i class="fas fa-qrcode"></i> PAGAMENTO VIA PIX</h4>
+                <p>Escaneie o QR Code abaixo ou use o Copia e Cola</p>
                 
-                <a href="#" id="paymentLink" class="payment-link" target="_blank">
-                    <i class="fas fa-lock"></i> Ir para Pagamento Seguro
-                </a>
+                <div id="qrcodeContainer" style="margin: 20px auto; max-width: 200px; background: white; padding: 10px; border-radius: 10px;">
+                    <img id="qrcodeImg" src="" alt="QR Code PIX" style="width: 100%; height: auto; display: block;">
+                </div>
 
-                <p style="color: #666; margin-top: 15px; font-size: 0.95rem;">
-                    <i class="fas fa-info-circle"></i> Você será redirecionado para a plataforma segura de pagamento
+                <div class="copy-paste-container" style="margin-top: 15px;">
+                    <textarea id="pixPayload" readonly style="width: 100%; height: 60px; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.8rem; background: #f9f9f9; resize: none; margin-bottom: 10px;"></textarea>
+                    <button onclick="copiarPix()" class="payment-link" style="background: #28a745; border: none; cursor: pointer; width: 100%;">
+                        <i class="fas fa-copy"></i> Copiar Código PIX
+                    </button>
+                </div>
+            </div>
+
+            <div class="payment-section" id="initialPaymentSection">
+                <h4><i class="fas fa-credit-card"></i> PAGAMENTO SEGURO</h4>
+                <p>Preencha seus dados abaixo para gerar o PIX de pagamento</p>
+                <p style="color: #666; margin-top: 10px; font-size: 0.85rem;">
+                    <i class="fas fa-shield-alt"></i> Seus dados estão protegidos.
                 </p>
             </div>
 
@@ -1074,48 +1085,63 @@
             const email = emailInput.value.trim();
 
             if (!nome || !email) {
-                alert("Preencha todos os campos");
+                alert("Preencha todos os campos para continuar");
                 return;
             }
 
             btn.disabled = true;
-            btn.innerHTML = "⏳ Abrindo pagamento...";
+            btn.innerHTML = "⏳ Gerando PIX...";
 
             try {
-                const total = state.carrinho.size * BOSS_CONFIG.valorNumerico;
+                const total = (state.carrinho.size * BOSS_CONFIG.valorNumerico).toFixed(2);
                 const numeros = Array.from(state.carrinho).sort((a,b) => a-b).join(", ");
                 
-                // Construir URL com parâmetros
-                const params = new URLSearchParams({
-                    'nome': nome,
-                    'email': email,
-                    'numeros': numeros,
-                    'total': total.toFixed(2)
+                const response = await fetch('/.netlify/functions/create-pix', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nome, email, total, numeros })
                 });
-                
-                const urlComParametros = BOSS_CONFIG.asaasLink + (BOSS_CONFIG.asaasLink.includes('?') ? '&' : '?') + params.toString();
-                
-                // Abrir link de pagamento em nova aba
-                window.open(urlComParametros, '_blank');
-                
-                btn.innerHTML = "✅ Redirecionando...";
-                btn.style.background = "#28a745";
 
-                setTimeout(() => {
-                    modal.style.display = "none";
-                    btn.innerHTML = "Confirmar";
+                const data = await response.json();
+
+                if (data.success) {
+                    // Esconder formulário e mostrar PIX
+                    document.getElementById("initialPaymentSection").style.display = "none";
+                    document.querySelector(".form-group").parentNode.style.display = "none";
+                    document.getElementById("pixSection").style.display = "block";
+                    
+                    // Preencher dados do PIX
+                    document.getElementById("qrcodeImg").src = `data:image/png;base64,${data.qrCodeBase64}`;
+                    document.getElementById("pixPayload").value = data.copyAndPaste;
+                    
+                    btn.innerHTML = "✅ PIX Gerado!";
+                    btn.style.background = "#28a745";
+                    
+                    // Mudar comportamento do botão para fechar
+                    btn.onclick = () => {
+                        fecharModal();
+                        limparCarrinho();
+                        location.reload(); // Recarregar para resetar estado
+                    };
+                    btn.innerHTML = "Concluir";
                     btn.disabled = false;
-                    btn.style.background = "";
-                    nameInput.value = "";
-                    emailInput.value = "";
-                    limparCarrinho();
-                }, 1500);
+                } else {
+                    throw new Error(data.error || "Erro ao gerar PIX");
+                }
 
             } catch (e) {
-                alert("Erro ao processar. Tente novamente.");
-                btn.innerHTML = "Confirmar";
+                console.error(e);
+                alert("Erro ao processar pagamento. Verifique se as chaves da API estão configuradas corretamente no Netlify.");
+                btn.innerHTML = "Tentar Novamente";
                 btn.disabled = false;
             }
+        }
+
+        function copiarPix() {
+            const payload = document.getElementById("pixPayload");
+            payload.select();
+            document.execCommand("copy");
+            alert("Código PIX copiado para a área de transferência!");
         }
 
         /* ================= INIT ================= */
