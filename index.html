@@ -1079,15 +1079,26 @@
             }
 
             btn.disabled = true;
-            btn.innerHTML = "⏳ Processando...";
+            btn.innerHTML = "⏳ Abrindo pagamento...";
 
             try {
                 const total = state.carrinho.size * BOSS_CONFIG.valorNumerico;
+                const numeros = Array.from(state.carrinho).sort((a,b) => a-b).join(", ");
                 
-                // Simular processamento
-                await new Promise(resolve => setTimeout(resolve, 1000));
-
-                btn.innerHTML = "✅ Pronto!";
+                // Construir URL com parâmetros
+                const params = new URLSearchParams({
+                    'nome': nome,
+                    'email': email,
+                    'numeros': numeros,
+                    'total': total.toFixed(2)
+                });
+                
+                const urlComParametros = BOSS_CONFIG.asaasLink + (BOSS_CONFIG.asaasLink.includes('?') ? '&' : '?') + params.toString();
+                
+                // Abrir link de pagamento em nova aba
+                window.open(urlComParametros, '_blank');
+                
+                btn.innerHTML = "✅ Redirecionando...";
                 btn.style.background = "#28a745";
 
                 setTimeout(() => {
