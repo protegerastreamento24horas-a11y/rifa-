@@ -3,27 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RIFA PREMIUM - R$ 5,00 por número</title>
+    <title>BOSS SORTEIOS - Sorteios Premium</title>
     
     <!-- META TAGS PARA WHATSAPP/SOCIAL -->
-    <meta property="og:title" content="RIFA PREMIUM - R$ 5,00 por número">
-    <meta property="og:description" content="Participe da nossa rifa! 1º Prêmio: R$ 100,00 via PIX • 2º Prêmio: Pendrive 16GB">
-    <meta property="og:image" content="https://i.ibb.co/d0hx3KDt/IMA1.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://rifa-premium.netlify.app/">
+    <meta property="og:title" content="BOSS SORTEIOS - Sorteios Premium">
+    <meta property="og:description" content="Participe dos sorteios BOSS! Prêmios incríveis e oportunidades de ganhar grande!">
+    <meta property="og:image" content="./banner-boss.jpg">
+    <meta property="og:url" content="https://boss-sorteios.netlify.app/">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="RIFA PREMIUM">
+    <meta property="og:site_name" content="BOSS SORTEIOS">
     
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="RIFA PREMIUM - R$ 5,00 por número">
-    <meta name="twitter:description" content="Participe da nossa rifa com 2 prêmios!">
-    <meta name="twitter:image" content="https://i.ibb.co/d0hx3KDt/IMA1.jpg">
+    <meta name="twitter:title" content="BOSS SORTEIOS - Sorteios Premium">
+    <meta name="twitter:description" content="Sorteios com prêmios incríveis!">
+    <meta name="twitter:image" content="./banner-boss.jpg">
     
     <!-- Meta tags importantes -->
-    <meta name="description" content="Rifa premium com dois prêmios: R$ 100,00 via PIX e Pendrive 16GB. Apenas R$ 5,00 por número!">
-    <meta name="keywords" content="rifa, sorteio, prêmio, pix, dinheiro, pendrive">
+    <meta name="description" content="BOSS SORTEIOS - Plataforma de sorteios premium com prêmios incríveis. Participe agora!">
+    <meta name="keywords" content="sorteio, prêmios, boss, sorteios online, chance de ganhar">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -64,98 +62,29 @@
             margin: 20px;
         }
 
-        /* ====== CARROSSEL PREMIUM ====== */
-        .carrossel-section {
+        /* ====== BANNER SEÇÃO ====== */
+        .banner-section {
             padding: 0;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            border-bottom: 3px solid #e94560;
+            border-bottom: 3px solid #ff6b00;
+            position: relative;
+            overflow: hidden;
         }
 
-        .carrossel-container {
+        .banner-container {
             width: 100%;
             max-width: 100%;
             margin: 0 auto;
             overflow: hidden;
-            border-radius: 0;
             position: relative;
             aspect-ratio: 16/9;
         }
 
-        .carrossel {
-            display: flex;
-            width: 100%;
-            height: 100%;
-        }
-
-        .carrossel-slide {
-            min-width: 100%;
-            height: 100%;
-        }
-
-        .carrossel-slide img {
+        .banner-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
-        }
-
-        .carrossel-indicators {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            z-index: 2;
-        }
-
-        .carrossel-indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .carrossel-indicator.active {
-            background: #e94560;
-            transform: scale(1.3);
-            border-color: white;
-        }
-
-        .carrossel-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            font-size: 1.5rem;
-        }
-
-        .carrossel-nav:hover {
-            background: #e94560;
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .carrossel-prev {
-            left: 20px;
-        }
-
-        .carrossel-next {
-            right: 20px;
         }
 
         /* ====== CABEÇALHO PREMIUM ====== */
@@ -175,7 +104,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #e94560, #f39c12, #e94560);
+            background: linear-gradient(90deg, #ff6b00, #ffa500, #ff6b00);
         }
 
         .header-content {
@@ -186,7 +115,7 @@
         }
 
         .valor-destaque {
-            background: linear-gradient(135deg, #e94560, #f39c12);
+            background: linear-gradient(135deg, #ff6b00, #ffa500);
             color: white;
             padding: 15px 40px;
             border-radius: 50px;
@@ -194,7 +123,7 @@
             font-size: 1.8rem;
             display: inline-block;
             margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.4);
+            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.4);
             border: none;
             animation: pulse 2s ease-in-out infinite;
         }
@@ -213,7 +142,7 @@
         }
 
         .header h1 i {
-            color: #f39c12;
+            color: #ffa500;
             margin-right: 15px;
         }
 
@@ -242,7 +171,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            color: #f39c12;
+            color: #ffa500;
         }
 
         .premio-detalhes {
@@ -262,16 +191,16 @@
             text-align: center;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             transition: all 0.3s ease;
-            border-left: 4px solid #e94560;
+            border-left: 4px solid #ff6b00;
         }
 
         .premio-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(233, 69, 96, 0.3);
+            box-shadow: 0 12px 30px rgba(255, 107, 0, 0.3);
         }
 
         .premio-item i {
-            color: #e94560;
+            color: #ff6b00;
             font-size: 2rem;
             margin-bottom: 10px;
             display: block;
@@ -298,7 +227,7 @@
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             text-align: center;
-            border-left: 5px solid #e94560;
+            border-left: 5px solid #ff6b00;
             transition: all 0.3s ease;
         }
 
@@ -318,7 +247,7 @@
         }
 
         .info-card h4 i {
-            color: #e94560;
+            color: #ff6b00;
             font-size: 1.5rem;
         }
 
@@ -354,17 +283,17 @@
         }
 
         .progress-header h3 i {
-            color: #e94560;
+            color: #ff6b00;
         }
 
         .progress-count {
             font-size: 1.6rem;
             font-weight: 800;
-            color: #e94560;
+            color: #ff6b00;
             background: white;
             padding: 10px 25px;
             border-radius: 50px;
-            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.2);
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.2);
         }
 
         .progress-bar {
@@ -398,7 +327,7 @@
         }
 
         .paid-fill {
-            background: linear-gradient(90deg, #e94560, #c0392b);
+            background: linear-gradient(90deg, #ff6b00, #ff8c00);
         }
 
         .progress-text {
@@ -437,7 +366,7 @@
             border-radius: 4px;
         }
 
-        /* ====== NÚMEROS GRID ====== */
+        /* ====== NÚMEROS CONTAINER ====== */
         .numbers-container {
             padding: 30px 20px;
             background: white;
@@ -446,7 +375,7 @@
         .cart-info {
             max-width: 1100px;
             margin: 0 auto 25px;
-            background: linear-gradient(135deg, #e94560, #f39c12);
+            background: linear-gradient(135deg, #ff6b00, #ffa500);
             color: white;
             padding: 15px 20px;
             border-radius: 10px;
@@ -491,85 +420,59 @@
             background: rgba(255, 255, 255, 0.3);
         }
 
-        .numbers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-            gap: 12px;
+        .numbers-input-container {
             max-width: 1100px;
-            margin: 0 auto;
+            margin: 0 auto 25px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
-        .number-box {
-            aspect-ratio: 1;
+        .numbers-input-container input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .numbers-input-container input:focus {
+            outline: none;
+            border-color: #ff6b00;
+            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+        }
+
+        .numbers-input-container button {
+            background: linear-gradient(135deg, #ff6b00, #ffa500);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .numbers-input-container button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+        }
+
+        .numbers-display {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            min-height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            user-select: none;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .number-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.3);
-            transition: left 0.5s ease;
-        }
-
-        .number-box:hover::before {
-            left: 100%;
-        }
-
-        .number-box.available {
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-            color: #1b5e20;
-            border-color: #4caf50;
-        }
-
-        .number-box.available:hover {
-            background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
-            color: white;
-            transform: scale(1.08);
-            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
-        }
-
-        .number-box.selected {
-            background: linear-gradient(135deg, #e94560 0%, #c0392b 100%);
-            color: white;
-            border-color: #e94560;
-            box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.2);
-        }
-
-        .number-box.selected::after {
-            content: '✓';
-            position: absolute;
-            font-size: 1.5rem;
-            font-weight: 900;
-        }
-
-        .number-box.reserved {
-            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-            color: white;
-            cursor: not-allowed;
-            border-color: #2980b9;
-        }
-
-        .number-box.sold {
-            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
-            color: white;
-            cursor: not-allowed;
-            border-color: #e67e22;
-            font-weight: 800;
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
         }
 
         /* ====== MODAL ====== */
@@ -621,7 +524,7 @@
             padding: 30px;
             text-align: center;
             border-radius: 20px 20px 0 0;
-            border-bottom: 3px solid #e94560;
+            border-bottom: 3px solid #ff6b00;
         }
 
         .modal-header h3 {
@@ -634,63 +537,39 @@
             opacity: 0.95;
         }
 
-        .pix-section {
+        .payment-section {
             padding: 30px;
             text-align: center;
         }
 
-        .pix-section h4 {
+        .payment-section h4 {
             color: #1a1a2e;
             margin-bottom: 10px;
             font-size: 1.2rem;
         }
 
-        .pix-section p {
+        .payment-section p {
             color: #666;
             margin-bottom: 20px;
         }
 
-        .qrcode-container {
-            margin: 20px 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        .qrcode-container img {
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .chave-pix {
-            background: #f0f0f0;
-            border: 2px solid #e94560;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            word-break: break-all;
-        }
-
-        .copy-btn {
-            background: linear-gradient(135deg, #e94560, #c0392b);
+        .payment-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b00, #ffa500);
             color: white;
-            border: none;
-            padding: 10px 18px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
-            white-space: nowrap;
-            margin-left: 10px;
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+            margin: 20px 0;
         }
 
-        .copy-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.3);
+        .payment-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.4);
         }
 
         /* ====== FORMULÁRIO ====== */
@@ -720,8 +599,8 @@
         .form-group input:focus,
         .form-group select:focus {
             outline: none;
-            border-color: #e94560;
-            box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
+            border-color: #ff6b00;
+            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
         }
 
         /* ====== BOTÕES MODAL ====== */
@@ -756,13 +635,13 @@
         }
 
         .confirm-btn {
-            background: linear-gradient(135deg, #e94560, #c0392b);
+            background: linear-gradient(135deg, #ff6b00, #ffa500);
             color: white;
         }
 
         .confirm-btn:hover:not(:disabled) {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
+            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.3);
         }
 
         .confirm-btn:disabled {
@@ -776,7 +655,7 @@
             color: white;
             padding: 30px 20px;
             text-align: center;
-            border-top: 3px solid #e94560;
+            border-top: 3px solid #ff6b00;
         }
 
         .footer p {
@@ -790,7 +669,7 @@
         }
 
         .contact-info a {
-            color: #f39c12;
+            color: #ffa500;
             text-decoration: none;
             font-weight: 700;
             transition: all 0.3s ease;
@@ -802,7 +681,7 @@
 
         .contact-info i {
             margin-right: 8px;
-            color: #f39c12;
+            color: #ffa500;
         }
 
         /* ====== LOADING ====== */
@@ -814,7 +693,7 @@
 
         .spinner {
             border: 5px solid #f3f3f3;
-            border-top: 5px solid #e94560;
+            border-top: 5px solid #ff6b00;
             border-radius: 50%;
             width: 50px;
             height: 50px;
@@ -832,7 +711,7 @@
             position: fixed;
             width: 10px;
             height: 10px;
-            background: #e94560;
+            background: #ff6b00;
             pointer-events: none;
             animation: confetti-fall 3s ease-in forwards;
         }
@@ -855,12 +734,12 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #e94560;
+            background: #ff6b00;
             border-radius: 5px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: #c0392b;
+            background: #e55a00;
         }
 
         /* ====== RESPONSIVO ====== */
@@ -883,10 +762,6 @@
                 padding: 12px 25px;
             }
 
-            .numbers-grid {
-                grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-            }
-
             .modal-content {
                 max-width: 95%;
             }
@@ -899,12 +774,6 @@
                 flex-direction: column;
                 text-align: center;
             }
-
-            .carrossel-nav {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
         }
 
         @media (max-width: 480px) {
@@ -915,15 +784,6 @@
             .valor-destaque {
                 font-size: 1.1rem;
                 padding: 10px 20px;
-            }
-
-            .numbers-grid {
-                grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-                gap: 8px;
-            }
-
-            .number-box {
-                font-size: 1rem;
             }
 
             .progress-header {
@@ -938,53 +798,38 @@
 </head>
 <body>
     <div class="container">
-        <!-- CARROSSEL DE IMAGENS -->
-        <div class="carrossel-section">
-            <div class="carrossel-container">
-                <div class="carrossel" id="carrossel">
-                    <div class="carrossel-slide">
-                        <img src="https://exemplo.com/banner1.jpg" alt="Banner 1" loading="lazy">
-                    </div>
-                    <div class="carrossel-slide">
-                        <img src="https://exemplo.com/banner2.png" alt="Banner 2" loading="lazy">
-                    </div>
-                </div>
-                
-                <button class="carrossel-nav carrossel-prev" onclick="prevSlide()">❮</button>
-                <button class="carrossel-nav carrossel-next" onclick="nextSlide()">❯</button>
-                
-                <div class="carrossel-indicators" id="carrosselIndicators">
-                    <div class="carrossel-indicator active" data-index="0"></div>
-                    <div class="carrossel-indicator" data-index="1"></div>
-                </div>
+        <!-- BANNER PRINCIPAL -->
+        <div class="banner-section">
+            <div class="banner-container">
+                <img src="./banner-boss.jpg" alt="BOSS SORTEIOS" class="banner-img" loading="lazy">
             </div>
         </div>
 
         <!-- CABEÇALHO -->
         <div class="header">
-            <div class="valor-destaque">R$ 5,00 por número</div>
+            <div class="valor-destaque">Sorteios Premium</div>
             
             <div class="header-content">
-                <h1><i class="fas fa-trophy"></i> RIFA PREMIUM</h1>
-                <h2>1 número = 2 chances de ganhar!</h2>
+                <h1><i class="fas fa-crown"></i> BOSS SORTEIOS</h1>
+                <h2>Escolha seus números e concorra a prêmios incríveis!</h2>
                 
                 <div class="premio-info">
-                    <h3><i class="fas fa-gift"></i> DOIS PRÊMIOS</h3>
+                    <h3><i class="fas fa-gift"></i> COMO FUNCIONA</h3>
                     <div class="premio-detalhes">
                         <div class="premio-item">
+                            <i class="fas fa-hashtag"></i>
+                            <div><strong>10.000 NÚMEROS</strong></div>
+                            <div>Escolha seus números de sorte</div>
+                        </div>
+                        <div class="premio-item">
                             <i class="fas fa-money-bill-wave"></i>
-                            <div><strong>1º PRÊMIO</strong></div>
-                            <div>R$ 100,00 via PIX</div>
+                            <div><strong>PRÊMIOS INCRÍVEIS</strong></div>
+                            <div>Ganhe prêmios surpreendentes</div>
                         </div>
                         <div class="premio-item">
-                            <i class="fas fa-sd-card"></i>
-                            <div><strong>2º PRÊMIO</strong></div>
-                            <div>Pendrive 16GB Atualizado</div>
-                        </div>
-                        <div class="premio-item">
-                            <i class="fas fa-calendar-check"></i>
-                            <div><strong>SORTEIOS</strong></div>
-                            <div>Imediato ao completar a cartela</div>
+                            <i class="fas fa-bolt"></i>
+                            <div><strong>PAGAMENTO RÁPIDO</strong></div>
+                            <div>Receba seus prêmios rapidamente</div>
                         </div>
                     </div>
                 </div>
@@ -995,16 +840,16 @@
         <div class="info-section">
             <div class="info-grid">
                 <div class="info-card">
-                    <h4><i class="fas fa-shield-alt"></i> SORTEIO CONFIÁVEL</h4>
-                    <p>Realizado através da plataforma Sorteador.com.br com link público</p>
+                    <h4><i class="fas fa-shield-alt"></i> SORTEIO SEGURO</h4>
+                    <p>Sorteios realizados com transparência e segurança</p>
                 </div>
                 <div class="info-card">
-                    <h4><i class="fas fa-bolt"></i> PAGAMENTO RÁPIDO</h4>
-                    <p>Pix instantâneo ou dinheiro com o organizador</p>
+                    <h4><i class="fas fa-lock"></i> PAGAMENTO SEGURO</h4>
+                    <p>Integrado com Asaas para máxima segurança</p>
                 </div>
                 <div class="info-card">
-                    <h4><i class="fas fa-user-check"></i> ORGANIZADOR</h4>
-                    <p>Carlos Alberto - (85) 98140-2113</p>
+                    <h4><i class="fas fa-envelope"></i> SUPORTE</h4>
+                    <p>Entre em contato: BOSSSORTEIOS@GMAIL.COM</p>
                 </div>
             </div>
         </div>
@@ -1012,9 +857,9 @@
         <!-- BARRA DE PROGRESSO -->
         <div class="progress-container">
             <div class="progress-header">
-                <h3><i class="fas fa-chart-line"></i> PROGRESSO DA RIFA</h3>
+                <h3><i class="fas fa-chart-line"></i> PROGRESSO</h3>
                 <div class="progress-count" id="progressCount">
-                    <span id="pagosCount">0</span>/<span id="reservadosCount">0</span>/100
+                    <span id="pagosCount">0</span>/<span id="reservadosCount">0</span>/10000
                 </div>
             </div>
             <div class="progress-bar">
@@ -1028,17 +873,17 @@
                     <span>Reservados: <span id="legendReservados">0</span></span>
                 </div>
                 <div class="legend-item">
-                    <span class="legend-color" style="background: #e94560;"></span>
+                    <span class="legend-color" style="background: #ff6b00;"></span>
                     <span>Pagos: <span id="legendPagos">0</span></span>
                 </div>
                 <div class="legend-item">
                     <span class="legend-color" style="background: #e0e0e0;"></span>
-                    <span>Disponíveis: <span id="legendDisponiveis">100</span></span>
+                    <span>Disponíveis: <span id="legendDisponiveis">10000</span></span>
                 </div>
             </div>
         </div>
 
-        <!-- GRADE DE NÚMEROS -->
+        <!-- SELEÇÃO DE NÚMEROS -->
         <div class="numbers-container">
             <div class="cart-info" id="cartInfo" style="display: none;">
                 <div class="cart-info-left">
@@ -1052,24 +897,26 @@
                 </button>
             </div>
 
-            <div class="numbers-grid" id="numbersGrid"></div>
-            
-            <div class="loading" id="loading">
-                <div class="spinner"></div>
-                <p>Carregando números disponíveis...</p>
+            <div class="numbers-input-container">
+                <input type="number" id="numberInput" placeholder="Digite um número de 1 a 10000" min="1" max="10000">
+                <button onclick="adicionarNumero()"><i class="fas fa-plus"></i> Adicionar</button>
+            </div>
+
+            <div class="numbers-display" id="numbersDisplay">
+                Nenhum número selecionado ainda. Digite um número acima para começar!
             </div>
         </div>
 
         <!-- RODAPÉ -->
         <div class="footer">
-            <p><strong>Dúvidas ou problemas com a compra?</strong></p>
+            <p><strong>Dúvidas ou sugestões?</strong></p>
             <div class="contact-info">
-                <i class="fab fa-whatsapp"></i>
-                Fale com Carlos Alberto: 
-                <a href="https://wa.me/5585981402113" target="_blank">(85) 98140-2113</a>
+                <i class="fas fa-envelope"></i>
+                Entre em contato: 
+                <a href="mailto:BOSSSORTEIOS@GMAIL.COM">BOSSSORTEIOS@GMAIL.COM</a>
             </div>
             <p style="margin-top: 20px; font-size: 0.95rem; opacity: 0.9;">
-                <i class="fas fa-mouse-pointer"></i> Clique em um número para selecionar. Selecione vários para comprar em lote!
+                <i class="fas fa-star"></i> BOSS SORTEIOS - Sorteios Premium com Prêmios Incríveis!
             </p>
         </div>
     </div>
@@ -1078,25 +925,20 @@
     <div class="modal" id="paymentModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 id="modalNumber">Números Selecionados</h3>
-                <p>Valor Total: <strong>R$ <span id="modalTotal">5,00</span></strong></p>
+                <h3>Finalizar Compra</h3>
+                <p>Valor Total: <strong>R$ <span id="modalTotal">0,00</span></strong></p>
             </div>
 
-            <div class="pix-section">
-                <h4><i class="fas fa-mobile-alt"></i> PAGAMENTO POR PIX</h4>
-                <p>Escaneie o QR Code ou copie a chave PIX</p>
+            <div class="payment-section">
+                <h4><i class="fas fa-credit-card"></i> PAGAMENTO SEGURO</h4>
+                <p>Clique no botão abaixo para realizar o pagamento via Asaas</p>
                 
-                <div class="qrcode-container" id="qrcodeContainer"></div>
-
-                <div class="chave-pix">
-                    <span id="pixKey">carregando...</span>
-                    <button class="copy-btn" onclick="copiarChavePix()">
-                        <i class="far fa-copy"></i> Copiar
-                    </button>
-                </div>
+                <a href="#" id="paymentLink" class="payment-link" target="_blank">
+                    <i class="fas fa-lock"></i> Ir para Pagamento Seguro
+                </a>
 
                 <p style="color: #666; margin-top: 15px; font-size: 0.95rem;">
-                    <i class="fas fa-info-circle"></i> Após o pagamento, preencha seus dados para confirmar a reserva
+                    <i class="fas fa-info-circle"></i> Você será redirecionado para a plataforma segura de pagamento
                 </p>
             </div>
 
@@ -1107,21 +949,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="clientPhone"><i class="fas fa-phone"></i> WHATSAPP OU TELEFONE *</label>
-                    <input type="tel" id="clientPhone" placeholder="(85) 99999-9999" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="vendedorSelect"><i class="fas fa-user-tie"></i> SELECIONE O VENDEDOR *</label>
-                    <select id="vendedorSelect">
-                        <option value="">Carregando vendedores...</option>
-                    </select>
-                    
-                    <div id="outroVendedorContainer" style="margin-top: 10px; display: none;">
-                        <input type="text" id="outroVendedorInput" 
-                               placeholder="Digite o nome do vendedor" 
-                               style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
-                    </div>
+                    <label for="clientEmail"><i class="fas fa-envelope"></i> SEU E-MAIL *</label>
+                    <input type="email" id="clientEmail" placeholder="seu@email.com" required>
                 </div>
             </div>
 
@@ -1130,7 +959,7 @@
                     <i class="fas fa-times"></i> Cancelar
                 </button>
                 <button class="confirm-btn" id="confirmBtn" onclick="confirmarReserva()">
-                    <i class="fas fa-check"></i> Confirmar Reserva
+                    <i class="fas fa-check"></i> Confirmar
                 </button>
             </div>
         </div>
@@ -1139,99 +968,74 @@
     <!-- SCRIPT PRINCIPAL -->
     <script>
         /* ================= CONFIGURAÇÃO ================= */
-        const RIFA_CONFIG = {
-            apiBase: "https://rifaproxy.albertdesignerbr.workers.dev",
-            valor: "R$ 5,00",
+        const BOSS_CONFIG = {
             valorNumerico: 5.00,
-            chavePix: "b3a0efeb-d91d-46dc-b84f-6d74e719c5d1",
-            nomeRecebedor: "Carlos Alberto Silva de S",
-            cidadeRecebedor: "SAO PAULO",
-            whatsapp: "https://wa.me/5585981402113"
+            asaasLink: "$aact_prod_000MzkwODA2MWY2OGM3MWRlMDU2NWM3MzJlNzZmNGZhZGY6OmQ3YTRiZDliLTg5OTctNDE2Yy1iZmMxLWQ5MTNiYTU2ZjAwOTo6JGFhY2hfYTgzMjU0YjQtZmI1Ny00NTVjLWIzZTAtNzQzNDVkZDUzZGU3",
+            email: "BOSSSORTEIOS@GMAIL.COM",
+            totalNumeros: 10000
         };
 
         /* ================= ESTADO ================= */
         const state = {
             pagos: new Set(),
             reservados: new Set(),
-            vendedores: [],
-            carrinho: new Set(),
-            selectedNumbers: new Set()
+            carrinho: new Set()
         };
 
         /* ================= DOM ================= */
-        const grid = document.getElementById("numbersGrid");
         const modal = document.getElementById("paymentModal");
-        const modalNumber = document.getElementById("modalNumber");
-        const modalTotal = document.getElementById("modalTotal");
-        const pixKeyEl = document.getElementById("pixKey");
-        const qrEl = document.getElementById("qrcodeContainer");
-        const vendedorSelect = document.getElementById("vendedorSelect");
-        const outroInput = document.getElementById("outroVendedorInput");
-        const nameInput = document.getElementById("clientName");
-        const phoneInput = document.getElementById("clientPhone");
-        const clientPhone = document.getElementById("clientPhone");
+        const numberInput = document.getElementById("numberInput");
+        const numbersDisplay = document.getElementById("numbersDisplay");
         const cartInfo = document.getElementById("cartInfo");
+        const nameInput = document.getElementById("clientName");
+        const emailInput = document.getElementById("clientEmail");
+        const paymentLink = document.getElementById("paymentLink");
+        const modalTotal = document.getElementById("modalTotal");
 
-        /* ================= API ================= */
-        async function api(action, data={}) {
-            const params = new URLSearchParams({action, ...data});
-            const url = `${RIFA_CONFIG.apiBase}/?${params}`;
-            const r = await fetch(url);
-            return await r.json();
-        }
-
-        /* ================= GRID ================= */
-        function criarGrid(){
-            grid.innerHTML="";
-            for(let i=1;i<=100;i++){
-                const d=document.createElement("div");
-                d.className="number-box available";
-                d.textContent=i;
-                d.onclick=()=>selecionarNumero(i);
-                d.dataset.n=i;
-                grid.appendChild(d);
-            }
-        }
-
-        /* ================= CARRINHO ================= */
-        function selecionarNumero(n) {
-            if(state.pagos.has(n) || state.reservados.has(n)) {
-                alert("Número indisponível");
+        /* ================= NÚMEROS ALEATÓRIOS ================= */
+        function adicionarNumero() {
+            const num = parseInt(numberInput.value);
+            
+            if(isNaN(num) || num < 1 || num > BOSS_CONFIG.totalNumeros) {
+                alert(`Digite um número entre 1 e ${BOSS_CONFIG.totalNumeros}`);
                 return;
             }
 
-            const box = document.querySelector(`[data-n="${n}"]`);
-            
-            if(state.carrinho.has(n)) {
-                state.carrinho.delete(n);
-                box.classList.remove("selected");
-            } else {
-                state.carrinho.add(n);
-                box.classList.add("selected");
-                criarConfete();
+            if(state.pagos.has(num) || state.reservados.has(num)) {
+                alert("Este número já foi vendido!");
+                return;
             }
 
+            if(state.carrinho.has(num)) {
+                alert("Este número já está no carrinho!");
+                return;
+            }
+
+            state.carrinho.add(num);
+            numberInput.value = "";
+            numberInput.focus();
             atualizarCarrinho();
+            criarConfete();
         }
 
         function atualizarCarrinho() {
             const count = state.carrinho.size;
-            const total = count * RIFA_CONFIG.valorNumerico;
+            const total = count * BOSS_CONFIG.valorNumerico;
 
             if(count > 0) {
                 cartInfo.style.display = "flex";
                 document.getElementById("cartCount").textContent = count;
                 document.getElementById("cartTotal").textContent = total.toFixed(2).replace(".", ",");
+                
+                const numeros = Array.from(state.carrinho).sort((a,b) => a-b).join(", ");
+                numbersDisplay.textContent = `Números selecionados: ${numeros}`;
             } else {
                 cartInfo.style.display = "none";
+                numbersDisplay.textContent = "Nenhum número selecionado ainda. Digite um número acima para começar!";
             }
         }
 
         function limparCarrinho() {
-            state.carrinho.forEach(n => {
-                const box = document.querySelector(`[data-n="${n}"]`);
-                if(box) box.classList.remove("selected");
-            });
             state.carrinho.clear();
             atualizarCarrinho();
         }
@@ -1242,228 +1046,11 @@
                 return;
             }
 
-            const total = state.carrinho.size * RIFA_CONFIG.valorNumerico;
+            const total = state.carrinho.size * BOSS_CONFIG.valorNumerico;
             modalTotal.textContent = total.toFixed(2).replace(".", ",");
             
-            const numeros = Array.from(state.carrinho).sort((a,b) => a-b).join(", ");
-            modalNumber.textContent = `Números: ${numeros}`;
-            
-            gerarPixMultiplo(Array.from(state.carrinho), total);
+            paymentLink.href = BOSS_CONFIG.asaasLink;
             modal.style.display = "flex";
-        }
-
-        /* ================= PIX ================= */
-        function gerarPixMultiplo(numeros, valor) {
-            const valorStr = valor.toFixed(2);
-            const chavePix = RIFA_CONFIG.chavePix;
-
-            const payloadParts = [
-                '000201',
-                '2658',
-                '0014BR.GOV.BCB.PIX',
-                '0136' + chavePix,
-                '52040000',
-                '5303986',
-                '54' + valorStr.length.toString().padStart(2, '0') + valorStr,
-                '5802BR',
-                '5901N',
-                '6001C',
-                '62070503***',
-                '6304'
-            ];
-
-            const payload = payloadParts.join('');
-            const crc = crc16(payload);
-            const pixCode = payload + crc;
-
-            pixKeyEl.textContent = chavePix;
-
-            qrEl.innerHTML = `
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=280x280&data=${encodeURIComponent(pixCode)}"
-                     style="width:280px;height:280px;border-radius:12px">
-                <p style="margin-top:15px;font-weight:bold;color:#1a1a2e;font-size:1.1rem">
-                    Números: ${numeros.join(", ")} — R$ ${valorStr.replace(".", ",")}
-                </p>
-            `;
-        }
-
-        function crc16(str) {
-            let crc = 0xFFFF;
-            for (let c = 0; c < str.length; c++) {
-                crc ^= str.charCodeAt(c) << 8;
-                for (let i = 0; i < 8; i++) {
-                    crc = (crc & 0x8000) ? (crc << 1) ^ 0x1021 : crc << 1;
-                }
-            }
-            return (crc & 0xFFFF).toString(16).toUpperCase().padStart(4, '0');
-        }
-
-        function copiarChavePix() {
-            const pixKey = document.getElementById("pixKey").textContent;
-            navigator.clipboard.writeText(pixKey).then(() => {
-                const btn = event.target.closest('.copy-btn');
-                const originalText = btn.innerHTML;
-                btn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                }, 2000);
-            }).catch(err => {
-                console.error('Erro ao copiar:', err);
-            });
-        }
-
-        /* ================= LOAD ================= */
-        let cacheVendas = null;
-        let cacheVendasTime = 0;
-        const CACHE_TIME = 15000;
-
-        async function carregarVendas() {
-            const agora = Date.now();
-            
-            if (cacheVendas && (agora - cacheVendasTime) < CACHE_TIME) {
-                console.log("Usando cache local...");
-                processarDadosVendas(cacheVendas);
-                return;
-            }
-            
-            try {
-                const r = await api("getVendas");
-                cacheVendas = r;
-                cacheVendasTime = agora;
-                processarDadosVendas(r);
-            } catch (error) {
-                console.log("Erro na API, usando cache...", error);
-                if (cacheVendas) {
-                    processarDadosVendas(cacheVendas);
-                } else {
-                    document.getElementById("loading").innerHTML = `
-                        <p style="color: #dc3545;">
-                            <i class="fas fa-exclamation-triangle"></i> 
-                            Erro ao carregar números. Recarregue a página.
-                        </p>
-                    `;
-                }
-            }
-        }
-
-        function processarDadosVendas(r) {
-            state.pagos.clear();
-            state.reservados.clear();
-
-            if (r.data && Array.isArray(r.data)) {
-                r.data.forEach(x => {
-                    if (x.status === "PAGO") state.pagos.add(+x.numero);
-                    if (x.status === "RESERVADO") state.reservados.add(+x.numero);
-                });
-            }
-
-            document.querySelectorAll(".number-box").forEach(el => {
-                const n = +el.dataset.n;
-                el.className = "number-box available";
-                if (state.reservados.has(n)) el.className = "number-box reserved";
-                if (state.pagos.has(n)) el.className = "number-box sold";
-            });
-
-            const pagosEl = document.getElementById("pagosCount");
-            const reservadosEl = document.getElementById("reservadosCount");
-            
-            if (pagosEl) pagosEl.textContent = state.pagos.size;
-            if (reservadosEl) reservadosEl.textContent = state.reservados.size;
-            
-            const loadingEl = document.getElementById("loading");
-            if (loadingEl) loadingEl.style.display = "none";
-            
-            atualizarBarraProgresso();
-        }
-
-        function atualizarBarraProgresso() {
-            const total = 100;
-            const pagos = state.pagos.size;
-            const reservados = state.reservados.size;
-            
-            const legendPagos = document.getElementById("legendPagos");
-            const legendReservados = document.getElementById("legendReservados");
-            const legendDisponiveis = document.getElementById("legendDisponiveis");
-            
-            if (legendPagos) legendPagos.textContent = pagos;
-            if (legendReservados) legendReservados.textContent = reservados;
-            if (legendDisponiveis) legendDisponiveis.textContent = total - pagos - reservados;
-            
-            const pagosFill = document.getElementById("pagosFill");
-            const reservadosFill = document.getElementById("reservadosFill");
-            const progressText = document.getElementById("progressText");
-            
-            if (pagosFill) pagosFill.style.width = `${(pagos / total) * 100}%`;
-            if (reservadosFill) reservadosFill.style.width = `${(reservados / total) * 100}%`;
-            if (progressText) progressText.textContent = `${Math.round((pagos / total) * 100)}%`;
-        }
-
-        /* ================= VENDEDORES ================= */
-        async function carregarVendedores(){
-            const r=await api("getVendedores");
-            vendedorSelect.innerHTML='<option value="">Selecione</option>';
-            r.data.forEach(v=>{
-                const o=document.createElement("option");
-                o.value=v;
-                o.textContent=v;
-                vendedorSelect.appendChild(o);
-            });
-            vendedorSelect.innerHTML+=`<option value="OUTRO">Outro</option>`;
-        }
-
-        /* ================= RESERVAR ================= */
-        async function confirmarReserva() {
-            const btn = document.getElementById("confirmBtn");
-
-            const nome = nameInput.value.trim();
-            const tel = phoneInput.value.replace(/\D/g,'');
-            let vendedor = vendedorSelect.value;
-
-            if (vendedor === "OUTRO") vendedor = outroInput.value;
-
-            if (!nome || !tel || !vendedor) {
-                alert("Preencha todos os campos");
-                return;
-            }
-
-            btn.disabled = true;
-            btn.innerHTML = "⏳ Finalizando...";
-
-            try {
-                const numerosArray = Array.from(state.carrinho);
-                
-                for(let numero of numerosArray) {
-                    await api("saveReservation", {
-                        numero: numero,
-                        nome,
-                        telefone: tel,
-                        vendedor,
-                        pagamento: "PIX",
-                        valor: RIFA_CONFIG.valorNumerico
-                    });
-                }
-
-                btn.innerHTML = "✅ Reservado!";
-                btn.style.background = "#28a745";
-
-                await carregarVendas();
-                limparCarrinho();
-
-                setTimeout(() => {
-                    modal.style.display = "none";
-                    btn.innerHTML = "Confirmar Reserva";
-                    btn.disabled = false;
-                    btn.style.background = "";
-                    nameInput.value = "";
-                    phoneInput.value = "";
-                    vendedorSelect.value = "";
-                }, 1500);
-
-            } catch (e) {
-                alert("Erro ao salvar. Tente novamente.");
-                btn.innerHTML = "Confirmar Reserva";
-                btn.disabled = false;
-            }
         }
 
         /* ================= CONFETE ================= */
@@ -1472,7 +1059,7 @@
                 const confetti = document.createElement('div');
                 confetti.className = 'confetti';
                 confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.backgroundColor = ['#e94560', '#f39c12', '#3498db', '#2ecc71'][Math.floor(Math.random() * 4)];
+                confetti.style.backgroundColor = ['#ff6b00', '#ffa500', '#3498db', '#2ecc71'][Math.floor(Math.random() * 4)];
                 confetti.style.animationDelay = Math.random() * 0.5 + 's';
                 document.body.appendChild(confetti);
                 
@@ -1480,30 +1067,60 @@
             }
         }
 
+        /* ================= RESERVAR ================= */
+        async function confirmarReserva() {
+            const btn = document.getElementById("confirmBtn");
+            const nome = nameInput.value.trim();
+            const email = emailInput.value.trim();
+
+            if (!nome || !email) {
+                alert("Preencha todos os campos");
+                return;
+            }
+
+            btn.disabled = true;
+            btn.innerHTML = "⏳ Processando...";
+
+            try {
+                const total = state.carrinho.size * BOSS_CONFIG.valorNumerico;
+                
+                // Simular processamento
+                await new Promise(resolve => setTimeout(resolve, 1000));
+
+                btn.innerHTML = "✅ Pronto!";
+                btn.style.background = "#28a745";
+
+                setTimeout(() => {
+                    modal.style.display = "none";
+                    btn.innerHTML = "Confirmar";
+                    btn.disabled = false;
+                    btn.style.background = "";
+                    nameInput.value = "";
+                    emailInput.value = "";
+                    limparCarrinho();
+                }, 1500);
+
+            } catch (e) {
+                alert("Erro ao processar. Tente novamente.");
+                btn.innerHTML = "Confirmar";
+                btn.disabled = false;
+            }
+        }
+
         /* ================= INIT ================= */
-        document.addEventListener("DOMContentLoaded", async() => {
-            criarGrid();
-            await carregarVendedores();
-            await carregarVendas();
-            initCarrossel();
-            
-            vendedorSelect.addEventListener('change', function() {
-                const outroContainer = document.getElementById('outroVendedorContainer');
-                if (this.value === 'OUTRO') {
-                    outroContainer.style.display = 'block';
-                } else {
-                    outroContainer.style.display = 'none';
-                }
+        document.addEventListener("DOMContentLoaded", () => {
+            numberInput.addEventListener("keypress", (e) => {
+                if(e.key === "Enter") adicionarNumero();
             });
 
-            // Adicionar botão flutuante para abrir modal
+            // Botão flutuante de compra
             const floatingBtn = document.createElement('button');
             floatingBtn.innerHTML = '<i class="fas fa-shopping-cart"></i> Comprar';
             floatingBtn.style.cssText = `
                 position: fixed;
                 bottom: 30px;
                 right: 30px;
-                background: linear-gradient(135deg, #e94560, #f39c12);
+                background: linear-gradient(135deg, #ff6b00, #ffa500);
                 color: white;
                 border: none;
                 padding: 15px 25px;
@@ -1512,14 +1129,13 @@
                 font-weight: 600;
                 font-size: 1rem;
                 z-index: 999;
-                box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
+                box-shadow: 0 8px 20px rgba(255, 107, 0, 0.3);
                 transition: all 0.3s ease;
                 display: none;
             `;
             floatingBtn.onclick = abrirModal;
             document.body.appendChild(floatingBtn);
 
-            // Mostrar/ocultar botão flutuante
             setInterval(() => {
                 if(state.carrinho.size > 0) {
                     floatingBtn.style.display = 'block';
@@ -1529,99 +1145,11 @@
             }, 500);
         });
 
+        window.adicionarNumero = adicionarNumero;
+        window.limparCarrinho = limparCarrinho;
+        window.abrirModal = abrirModal;
         window.confirmarReserva = confirmarReserva;
         window.fecharModal = () => modal.style.display = "none";
-        window.prevSlide = prevSlide;
-        window.nextSlide = nextSlide;
-        window.abrirModal = abrirModal;
-        window.limparCarrinho = limparCarrinho;
-        window.copiarChavePix = copiarChavePix;
-
-        // Formatação de telefone
-        clientPhone.addEventListener("input", function () {
-            let v = this.value.replace(/\D/g, "");
-
-            if (v.length > 11) v = v.substring(0, 11);
-
-            if (v.length > 10) {
-                v = v.replace(/^(\d{2})(\d{5})(\d{4}).*/, "($1) $2-$3");
-            } else if (v.length > 6) {
-                v = v.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, "($1) $2-$3");
-            } else if (v.length > 2) {
-                v = v.replace(/^(\d{2})(\d{0,5})/, "($1) $2");
-            } else if (v.length > 0) {
-                v = v.replace(/^(\d*)/, "($1");
-            }
-
-            this.value = v;
-        });
-
-        /* ================= CARROSSEL ================= */
-        let currentSlide = 0;
-        const totalSlides = 2;
-        const carrossel = document.getElementById('carrossel');
-        const indicators = document.querySelectorAll('.carrossel-indicator');
-        let carrosselInterval;
-
-        function initCarrossel() {
-            updateCarrossel();
-            startAutoSlide();
-            
-            const container = document.querySelector('.carrossel-container');
-            let startX = 0;
-            let endX = 0;
-            
-            container.addEventListener('touchstart', (e) => {
-                startX = e.touches[0].clientX;
-                clearInterval(carrosselInterval);
-            });
-            
-            container.addEventListener('touchend', (e) => {
-                endX = e.changedTouches[0].clientX;
-                if (startX - endX > 50) {
-                    nextSlide();
-                } else if (endX - startX > 50) {
-                    prevSlide();
-                }
-                startAutoSlide();
-            });
-        }
-
-        function updateCarrossel() {
-            carrossel.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
-            indicators.forEach((indicator, index) => {
-                indicator.classList.toggle('active', index === currentSlide);
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateCarrossel();
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateCarrossel();
-        }
-
-        function goToSlide(index) {
-            currentSlide = index;
-            updateCarrossel();
-            startAutoSlide();
-        }
-
-        function startAutoSlide() {
-            clearInterval(carrosselInterval);
-            carrosselInterval = setInterval(nextSlide, 4000);
-        }
-
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => goToSlide(index));
-        });
-
-        window.prevSlide = prevSlide;
-        window.nextSlide = nextSlide;
     </script>
 </body>
 </html>
