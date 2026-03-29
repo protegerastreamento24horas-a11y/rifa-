@@ -1,463 +1,49 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BOSS SORTEIOS - Sorteios Premium</title>
-    
-    <!-- META TAGS PARA WHATSAPP/SOCIAL -->
-    <meta property="og:title" content="BOSS SORTEIOS - Sorteios Premium">
-    <meta property="og:description" content="Participe dos sorteios BOSS! Prêmios incríveis e oportunidades de ganhar grande!">
-    <meta property="og:image" content="./banner-boss.jpg">
-    <meta property="og:url" content="https://boss-sorteios.netlify.app/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="BOSS SORTEIOS">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Ticket Purchase</title>
     <style>
-        :root {
-            --primary: #ff6b00;
-            --primary-dark: #e65a00;
-            --secondary: #1a1a2e;
-            --bg-dark: #0f3460;
-            --text-light: #f8f9fa;
-            --text-dark: #333;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-        }
-
-        body {
-            background-color: var(--secondary);
-            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--secondary) 100%);
-            color: var(--text-dark);
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--white);
-            min-height: 100vh;
-            box-shadow: 0 0 50px rgba(0,0,0,0.5);
-            position: relative;
-        }
-
-        /* HEADER & BANNER */
-        .banner-section {
-            width: 100%;
-            aspect-ratio: 16/9;
-            background: #000;
-            overflow: hidden;
-            border-bottom: 4px solid var(--primary);
-        }
-
-        .banner-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .header {
-            padding: 30px 20px;
-            text-align: center;
-            background: var(--secondary);
-            color: var(--text-light);
-        }
-
-        .badge-premium {
-            background: var(--primary);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            display: inline-block;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        .header h1 { font-size: 2.2rem; font-weight: 900; margin-bottom: 5px; }
-        .header p { opacity: 0.7; font-size: 1rem; }
-
-        /* PREÇO E INFO */
-        .price-tag {
-            background: #f8f9fa;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-        }
-
-        .price-value {
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--primary);
-        }
-
-        .price-unit { font-size: 1rem; color: #666; font-weight: 400; }
-
-        /* SELEÇÃO DE BILHETES */
-        .selection-section { padding: 30px 20px; }
-        .section-title {
-            font-size: 1.2rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .section-title i { color: var(--primary); }
-
-        .ticket-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .ticket-option {
-            background: #fff;
-            border: 2px solid #eee;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.2s;
-            position: relative;
-        }
-
-        .ticket-option:hover { border-color: var(--primary); transform: translateY(-3px); }
-        .ticket-option.active { border-color: var(--primary); background: #fffaf5; box-shadow: 0 5px 15px rgba(255,107,0,0.1); }
-        .ticket-option.active::after {
-            content: '\f058';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: var(--primary);
-        }
-
-        .opt-qty { font-size: 1.5rem; font-weight: 900; display: block; }
-        .opt-label { font-size: 0.9rem; color: #666; font-weight: 600; }
-        .opt-save { 
-            background: #28a745; 
-            color: white; 
-            font-size: 0.7rem; 
-            padding: 2px 8px; 
-            border-radius: 10px; 
-            position: absolute; 
-            top: -10px; 
-            left: 50%; 
-            transform: translateX(-50%);
-            font-weight: 800;
-        }
-
-        /* CUSTOM QUANTITY */
-        .custom-qty {
-            display: flex;
-            background: #f1f1f1;
-            border-radius: 10px;
-            padding: 5px;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-        .custom-qty button {
-            width: 50px;
-            height: 50px;
-            border: none;
-            background: white;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            color: var(--secondary);
-        }
-        .custom-qty input {
-            flex: 1;
-            border: none;
-            background: transparent;
-            text-align: center;
-            font-size: 1.2rem;
-            font-weight: 900;
-            outline: none;
-        }
-
-        /* RESUMO E CHECKOUT */
-        .checkout-bar {
-            position: sticky;
-            bottom: 0;
-            background: white;
-            padding: 20px;
-            border-top: 1px solid #eee;
-            box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 100;
-        }
-
-        .checkout-info { display: flex; justify-content: space-between; align-items: center; }
-        .total-label { font-size: 1rem; font-weight: 600; color: #666; }
-        .total-value { font-size: 1.8rem; font-weight: 900; color: var(--secondary); }
-
-        .btn-buy {
-            background: #28a745;
-            color: white;
-            border: none;
-            padding: 18px;
-            border-radius: 12px;
-            font-size: 1.2rem;
-            font-weight: 800;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: background 0.2s;
-            text-decoration: none;
-        }
-        .btn-buy:hover { background: #218838; }
-
-        /* MODAL */
-        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; z-index: 1000; padding: 20px; }
-        .modal-content { background: white; padding: 30px; border-radius: 20px; width: 100%; max-width: 450px; text-align: center; }
-        .modal-content h3 { margin-bottom: 10px; font-weight: 900; }
-        .modal-content p { color: #666; margin-bottom: 25px; font-size: 0.9rem; }
-
-        .input-group { text-align: left; margin-bottom: 20px; }
-        .input-group label { display: block; margin-bottom: 8px; font-weight: 700; font-size: 0.9rem; color: #444; }
-        .input-group input { width: 100%; padding: 14px; border-radius: 10px; border: 2px solid #eee; font-size: 1rem; outline: none; transition: border 0.2s; }
-        .input-group input:focus { border-color: var(--primary); }
-
-        .modal-actions { display: grid; grid-template-columns: 1fr 2fr; gap: 10px; }
-        .btn-cancel { background: #eee; color: #666; border: none; padding: 15px; border-radius: 10px; font-weight: 700; cursor: pointer; }
-        .btn-confirm { background: var(--primary); color: white; border: none; padding: 15px; border-radius: 10px; font-weight: 700; cursor: pointer; }
-
-        .footer { padding: 40px 20px; text-align: center; background: #f8f9fa; color: #999; font-size: 0.8rem; }
-
-        .confetti { position: fixed; width: 8px; height: 8px; pointer-events: none; z-index: 9999; animation: fall 3s linear forwards; }
-        @keyframes fall { to { transform: translateY(100vh) rotate(360deg); } }
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 600px; margin: auto; }
+        input, button { width: 100%; padding: 10px; margin: 5px 0; }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- BANNER -->
-        <div class="banner-section">
-            <img src="./banner-boss.jpg" alt="BOSS SORTEIOS" class="banner-img">
-        </div>
-
-        <!-- HEADER -->
-        <div class="header">
-            <span class="badge-premium">Sorteio Premium</span>
-            <h1>BOSS SORTEIOS</h1>
-            <p>Escolha seus bilhetes e concorra a prêmios incríveis!</p>
-        </div>
-
-        <!-- PREÇO -->
-        <div class="price-tag">
-            <span class="price-unit">Por apenas</span><br>
-            <span class="price-value">R$ 5,00</span>
-            <span class="price-unit">cada bilhete</span>
-        </div>
-
-        <!-- SELEÇÃO -->
-        <div class="selection-section">
-            <h2 class="section-title"><i class="fas fa-ticket-alt"></i> ESCOLHA A QUANTIDADE</h2>
-            
-            <div class="ticket-grid">
-                <div class="ticket-option" onclick="selectQty(10)">
-                    <span class="opt-qty">10</span>
-                    <span class="opt-label">Bilhetes</span>
-                </div>
-                <div class="ticket-option active" onclick="selectQty(25)">
-                    <span class="opt-qty">25</span>
-                    <span class="opt-label">Bilhetes</span>
-                    <span class="opt-save">Mais Popular</span>
-                </div>
-                <div class="ticket-option" onclick="selectQty(50)">
-                    <span class="opt-qty">50</span>
-                    <span class="opt-label">Bilhetes</span>
-                    <span class="opt-save">Recomendado</span>
-                </div>
-                <div class="ticket-option" onclick="selectQty(100)">
-                    <span class="opt-qty">100</span>
-                    <span class="opt-label">Bilhetes</span>
-                    <span class="opt-save">Melhor Chance</span>
-                </div>
-            </div>
-
-            <h2 class="section-title"><i class="fas fa-plus-circle"></i> OU OUTRA QUANTIDADE</h2>
-            <div class="custom-qty">
-                <button onclick="changeQty(-1)"><i class="fas fa-minus"></i></button>
-                <input type="number" id="customInput" value="25" min="1" max="1000" onchange="updateFromInput()">
-                <button onclick="changeQty(1)"><i class="fas fa-plus"></i></button>
-            </div>
-
-            <div style="background: #fff8f0; border: 1px dashed var(--primary); padding: 15px; border-radius: 10px; font-size: 0.9rem; color: #856404;">
-                <i class="fas fa-magic"></i> <strong>Lógica Profissional:</strong> Ao finalizar a compra, o sistema sorteará automaticamente seus números da sorte e enviará para o seu e-mail após o pagamento.
-            </div>
-        </div>
-
-        <div class="footer">
-            <p>Sorteios realizados com base na Loteria Federal.</p>
-            <p>&copy; 2024 BOSS SORTEIOS - Todos os direitos reservados.</p>
-        </div>
-
-        <!-- BARRA DE CHECKOUT -->
-        <div class="checkout-bar">
-            <div class="checkout-info">
-                <div>
-                    <span class="total-label">Total para <strong id="summaryQty">25</strong> bilhetes:</span>
-                </div>
-                <div class="total-value" id="summaryTotal">R$ 125,00</div>
-            </div>
-            <button class="btn-buy" onclick="abrirModal()">
-                <i class="fas fa-shopping-cart"></i> COMPRAR AGORA
-            </button>
-        </div>
+        <h1>Buy Your Tickets</h1>
+        <form id="ticketForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <button type="submit">Purchase Ticket</button>
+        </form>
+        <div id="feedback"></div>
     </div>
-
-    <!-- MODAL DE DADOS -->
-    <div class="modal" id="dataModal">
-        <div class="modal-content">
-            <i class="fas fa-user-shield" style="font-size: 3rem; color: var(--primary); margin-bottom: 15px;"></i>
-            <h3>Quase lá!</h3>
-            <p>Preencha seus dados para receber seus números da sorte após a confirmação do pagamento.</p>
-            
-            <div class="input-group">
-                <label>Nome Completo</label>
-                <input type="text" id="clientName" placeholder="Digite seu nome">
-            </div>
-            <div class="input-group">
-                <label>Seu Melhor E-mail</label>
-                <input type="email" id="clientEmail" placeholder="seu@email.com">
-            </div>
-
-            <div class="modal-actions">
-                <button class="btn-cancel" onclick="fecharModal()">Voltar</button>
-                <button class="btn-confirm" onclick="finalizarCompra()">Confirmar</button>
-            </div>
-        </div>
-    </div>
-
     <script>
-        const CONFIG = {
-            valorUnitario: 5.00,
-            kiwifyLink: "https://pay.kiwify.com.br/j2BxrFD"
-        };
+        document.getElementById('ticketForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
 
-        let currentQty = 25;
-
-        function selectQty(qty) {
-            currentQty = qty;
-            document.getElementById("customInput").value = qty;
-            
-            // Update UI active state
-            document.querySelectorAll('.ticket-option').forEach(opt => {
-                opt.classList.remove('active');
-                if(opt.querySelector('.opt-qty').textContent == qty) {
-                    opt.classList.add('active');
-                }
-            });
-            
-            updateSummary();
-            criarConfete();
-        }
-
-        function changeQty(delta) {
-            currentQty = Math.max(1, currentQty + delta);
-            document.getElementById("customInput").value = currentQty;
-            updateSummary();
-            clearActiveStates();
-        }
-
-        function updateFromInput() {
-            currentQty = Math.max(1, parseInt(document.getElementById("customInput").value) || 1);
-            updateSummary();
-            clearActiveStates();
-        }
-
-        function clearActiveStates() {
-            document.querySelectorAll('.ticket-option').forEach(opt => opt.classList.remove('active'));
-        }
-
-        function updateSummary() {
-            const total = currentQty * CONFIG.valorUnitario;
-            document.getElementById("summaryQty").textContent = currentQty;
-            document.getElementById("summaryTotal").textContent = `R$ ${total.toFixed(2).replace(".", ",")}`;
-            document.getElementById("customInput").value = currentQty;
-        }
-
-        function abrirModal() { document.getElementById("dataModal").style.display = "flex"; }
-        function fecharModal() { document.getElementById("dataModal").style.display = "none"; }
-
-        function gerarNumerosSorte(quantidade) {
-            const numeros = [];
-            while(numeros.length < quantidade) {
-                const n = Math.floor(Math.random() * 10000) + 1;
-                if(!numeros.includes(n)) numeros.push(n);
-            }
-            return numeros.sort((a,b) => a-b);
-        }
-
-        function finalizarCompra() {
-            const nome = document.getElementById("clientName").value.trim();
-            const email = document.getElementById("clientEmail").value.trim();
-            
-            if(!nome || !email) {
-                return alert("Por favor, preencha todos os campos para receber seus números.");
+            // Basic validation
+            if (!name || !email) {
+                displayFeedback('All fields are required.', true);
+                return;
             }
 
-            // Lógica Profissional: Gerar números da sorte antes de ir pro checkout
-            const numerosSorteados = gerarNumerosSorte(currentQty);
-            
-            // Salvar no LocalStorage para mostrar ao voltar (opcional)
-            localStorage.setItem('ultimos_numeros', JSON.stringify({
-                nome: nome,
-                quantidade: currentQty,
-                numeros: numerosSorteados,
-                data: new Date().toLocaleString()
-            }));
+            // Simulate ticket purchasing logic
+            localStorage.setItem('ticketPurchase', JSON.stringify({ name, email }));
+            displayFeedback('Ticket purchased successfully!');
+        });
 
-            // Tentar passar dados para a Kiwify via URL Parameters (se o checkout suportar)
-            // Muitos checkouts aceitam &name=...&email=...
-            const checkoutUrl = new URL(CONFIG.kiwifyLink);
-            checkoutUrl.searchParams.append('name', nome);
-            checkoutUrl.searchParams.append('email', email);
-            checkoutUrl.searchParams.append('qty', currentQty); // Parâmetro customizado para seu controle
-
-            // Redirecionamento Final
-            window.location.href = checkoutUrl.toString();
+        function displayFeedback(message, isError = false) {
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.textContent = message;
+            feedbackDiv.style.color = isError ? 'red' : 'green';
         }
-
-        function criarConfete() {
-            for(let i=0; i<30; i++) {
-                const c = document.createElement("div");
-                c.className = "confetti";
-                c.style.left = Math.random() * 100 + "vw";
-                c.style.backgroundColor = ["#ff6b00", "#ffa500", "#28a745", "#3498db"][Math.floor(Math.random()*4)];
-                c.style.animationDelay = Math.random() * 0.5 + "s";
-                document.body.appendChild(c);
-                setTimeout(() => c.remove(), 3000);
-            }
-        }
-
-        // Initialize
-        updateSummary();
     </script>
 </body>
 </html>
