@@ -1,49 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticket Purchase</title>
+    <title>BOSS SORTEIOS</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .container { max-width: 600px; margin: auto; }
-        input, button { width: 100%; padding: 10px; margin: 5px 0; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        #carousel { position: relative; overflow: hidden; }
+        .carousel-images { display: flex; transition: transform 0.5s ease; }
+        .carousel-images img { max-width: 100%; } /* responsive images */
+        button { min-width: 44px; padding: 10px; }
+        /* Add other styling here */
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Buy Your Tickets</h1>
-        <form id="ticketForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
-            <button type="submit">Purchase Ticket</button>
-        </form>
-        <div id="feedback"></div>
+    <header>
+        <h1>BOSS SORTEIOS</h1>
+    </header>
+    <div id="carousel">
+        <div class="carousel-images">
+            <img src="banner-boss.jpg" alt="BOSS Banner">
+            <img src="sorteio-banner.jpg" alt="Sorteio Banner">
+        </div>
     </div>
+    <div id="ticket-selection">
+        <h2>Selecione sua quantidade de ingressos:</h2>
+        <div>
+            <button onclick="updateQuantity(10)">10</button>
+            <button onclick="updateQuantity(25)">25</button>
+            <button onclick="updateQuantity(50)">50</button>
+            <button onclick="updateQuantity(100)">100</button>
+            <input type="number" id="custom-quantity" min="1" value="1">
+            <button onclick="increaseQuantity()">+</button>
+            <button onclick="decreaseQuantity()">-</button>
+        </div>
+        <p id="total-price">Preço total: R$ <span id="price">0.00</span></p>
+    </div>
+    <div id="customer-data-modal">
+        <h2>Dados do Cliente</h2>
+        <input type="text" id="customer-name" placeholder="Nome" required>
+        <input type="email" id="customer-email" placeholder="Email" required>
+        <button onclick="submitData()">Enviar</button>
+    </div>
+    <footer style="position: sticky; bottom: 0; background-color: #fff;">
+        <button onclick="kiwifyCheckout()">Finalizar Compra</button>
+    </footer>
     <script>
-        document.getElementById('ticketForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
+        let quantity = 0;
+        const ticketPrice = 5.00;
 
-            // Basic validation
-            if (!name || !email) {
-                displayFeedback('All fields are required.', true);
-                return;
-            }
-
-            // Simulate ticket purchasing logic
-            localStorage.setItem('ticketPurchase', JSON.stringify({ name, email }));
-            displayFeedback('Ticket purchased successfully!');
-        });
-
-        function displayFeedback(message, isError = false) {
-            const feedbackDiv = document.getElementById('feedback');
-            feedbackDiv.textContent = message;
-            feedbackDiv.style.color = isError ? 'red' : 'green';
+        function updateQuantity(num) {
+            quantity = num;
+            calculatePrice();
+            showConfetti();
         }
+        function increaseQuantity() {
+            quantity++;
+            document.getElementById('custom-quantity').value = quantity;
+            calculatePrice();
+        }
+        function decreaseQuantity() {
+            if (quantity > 0) quantity--;
+            document.getElementById('custom-quantity').value = quantity;
+            calculatePrice();
+        }
+        function calculatePrice() {
+            document.getElementById('price').innerText = (quantity * ticketPrice).toFixed(2);
+        }
+        function submitData() {
+            const name = document.getElementById('customer-name').value;
+            const email = document.getElementById('customer-email').value;
+            if (validateEmail(email) && name !== "") {
+                // Save to localStorage
+                localStorage.setItem('customerData', JSON.stringify({ name, email }));
+                alert('Dados do cliente salvos!');
+            } else {
+                alert('Por favor, insira um nome válido e um email!');
+            }
+        }
+        function validateEmail(email) {
+            const re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+            return re.test(email);
+        }
+        function showConfetti() {
+            // Implement confetti animation
+        }
+        function kiwifyCheckout() {
+            // Implement Kiwify checkout integration
+        }
+        // Carousel rotation and manual navigation logic
     </script>
 </body>
 </html>
