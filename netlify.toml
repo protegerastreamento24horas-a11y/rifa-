@@ -8,31 +8,13 @@
   to = "/index.html"
   status = 200
 
-[headers]
-  [[headers.values]]
-    key = "Cache-Control"
-    value = "public, max-age=3600"
-
-  [[headers.values]]
-    key = "X-Content-Type-Options"
-    value = "nosniff"
-
-  [[headers.values]]
-    key = "X-Frame-Options"
-    value = "SAMEORIGIN"
-
-  [[headers.values]]
-    key = "X-XSS-Protection"
-    value = "1; mode=block"
-
-  [[headers.values]]
-    key = "Referrer-Policy"
-    value = "strict-origin-when-cross-origin"
-
-  [[headers.values]]
-    key = "Access-Control-Allow-Origin"
-    value = "*"
-
-  [[headers.values]]
-    key = "Access-Control-Allow-Methods"
-    value = "GET,POST,OPTIONS"
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET,POST,OPTIONS"
