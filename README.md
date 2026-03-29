@@ -139,15 +139,6 @@ O site é totalmente responsivo e funciona perfeitamente em:
 2. Verifique os logs no console (F12)
 3. Recarregue a página
 
-## 📞 Suporte
-
-Para dúvidas ou problemas, entre em contato através do WhatsApp:
-- Carlos Alberto: (85) 98140-2113
-
-## 📄 Licença
-
-Todos os direitos reservados © 2024
-
 ## ✅ Checklist de Deploy
 
 - [ ] Verificar todas as configurações em `RIFA_CONFIG`
